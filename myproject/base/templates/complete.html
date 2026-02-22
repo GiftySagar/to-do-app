@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>This is complete page</h1>
+<a href="{% url 'crestore_all' %}">Restore all</a>
+<a href="{% url 'cdelete_all' %}">Delete all</a>
+<center>
+    {% for i in data %}
+        <h2>{{i.id}} // {{i.title}} // {{i.desc}} </h2>
+        <a href="{% url 'crestore' i.id %}">restore</a>
+        <a href="{% url 'cdelete'  i.id %}">Delete</a>
+
+    {% endfor %}
+</center>
+{% endblock %}
